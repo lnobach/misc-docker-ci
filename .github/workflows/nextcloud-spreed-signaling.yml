@@ -1,4 +1,4 @@
-name: docker
+name: nextcloud-spreed-signaling
 
 env:
   source_proj: strukturag/nextcloud-spreed-signaling
