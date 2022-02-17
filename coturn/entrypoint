@@ -2,8 +2,8 @@
 
 set -e
 
-TARGETCERT=/etc/coturn/janus.crt
-TARGETKEY=/etc/coturn/janus.key
+TARGETCERT=/etc/coturn/coturn.crt
+TARGETKEY=/etc/coturn/coturn.key
 
 if [ ! -z "$COPYCERT" ]; then
     mkdir -p /etc/coturn
