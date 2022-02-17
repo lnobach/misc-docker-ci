@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+set -e
+
+TARGETCERT=/etc/coturn/janus.crt
+TARGETKEY=/etc/coturn/janus.key
+
+if [ ! -z "$COPYCERT" ]; then
+    mkdir -p /etc/coturn
+    cp "$COPYCERT" "$TARGETCERT"
+    chmod 644 "$TARGETCERT"
+    chown nobody "$TARGETCERT"
+fi
+
+if [ ! -z "$COPYKEY" ]; then
+    mkdir -p /etc/coturn
+    cp "$COPYKEY" "$TARGETKEY"
+    chmod 600 "$TARGETKEY"
+    chown nobody "$TARGETKEY"
+fi
+
+sudo -u nobody docker-entrypoint.sh --log-file=stdout --external-ip=$(detect-external-ip)
