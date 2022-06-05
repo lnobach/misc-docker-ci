@@ -3,8 +3,8 @@ name: nextcloud-spreed-signaling
 env:
   source_proj: strukturag/nextcloud-spreed-signaling
   dest_repo:  ghcr.io/lnobach/nextcloud-spreed-signaling
-  source_ref: refs/tags/v0.4.1
-  dest_tag: 0.4.1
+  source_ref: refs/tags/v0.5.0
+  dest_tag: 0.5.0
 
 on:
   push:
