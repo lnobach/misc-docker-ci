@@ -5,7 +5,7 @@ env:
   context: janus-gateway
   dockerfile: janus-gateway/Dockerfile
   dest_repo:  ghcr.io/lnobach/janus-gateway
-  dest_tag: 0.12.2
+  dest_tag: 1.3.0
 
 on:
   push:
@@ -19,21 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v3
       - name: Login to Github Packages
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Check if image already built
         run: set +e; docker manifest inspect $dest_repo:$dest_tag > /dev/null; echo "image_exists=$?" >> $GITHUB_ENV
       - name: Build and push
         if: env.image_exists == 1
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           context: ${{ env.context }}
           file: ${{ env.dockerfile }}

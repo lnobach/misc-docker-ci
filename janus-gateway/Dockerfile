@@ -1,12 +1,12 @@
-FROM alpine:3.16
+FROM alpine:3.22
 
 RUN apk add --no-cache sudo curl autoconf automake libtool pkgconf build-base \
   glib-dev libconfig-dev libnice-dev jansson-dev openssl-dev zlib \
   gengetopt libwebsockets-dev git
 
-ARG USRSCTP_VERSION=9b353c68a45d71474ea991dc4f33acc2a7acce49
-ARG LIBSRTP_VERSION=v2.4.2
-ARG JANUS_VERSION=v0.12.2
+ARG USRSCTP_VERSION=fd070e05a7474f38c7fecdf4d4b6005d2547ee00
+ARG LIBSRTP_VERSION=v2.7.0
+ARG JANUS_VERSION=v1.3.0
 
 RUN cd /tmp && \
     git clone https://github.com/sctplab/usrsctp && \

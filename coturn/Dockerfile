@@ -1,4 +1,4 @@
-FROM coturn/coturn:4.5.2-r12-alpine
+FROM coturn/coturn:4.7.0-r2-alpine
 
 USER root:root
 
