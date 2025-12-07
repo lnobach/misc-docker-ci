@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/coturn"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "/janus-gateway"
+    schedule:
+      interval: "weekly"
