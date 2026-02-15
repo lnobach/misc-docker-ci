@@ -38,6 +38,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: build
-          file: nextcloud-spreed-signaling/Dockerfile
+          file: ../nextcloud-spreed-signaling/Dockerfile
           push: true
           tags: ${{ env.dest_repo }}:${{ env.source_version }}, latest
