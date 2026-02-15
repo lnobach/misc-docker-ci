@@ -32,12 +32,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Check if image already built
         run: set +e; docker manifest inspect $dest_repo:$source_version > /dev/null; echo "image_exists=$?" >> $GITHUB_ENV
+      - name: Patch dockerfile
+        run: cp nextcloud-spreed-signaling/Dockerfile build/docker/server/Dockerfile
       - name: Build and push
         if: env.image_exists == 1
         id: docker_build
         uses: docker/build-push-action@v6
         with:
           context: build
-          file: ../nextcloud-spreed-signaling/Dockerfile
+          file: build/docker/server/Dockerfile
           push: true
           tags: ${{ env.dest_repo }}:${{ env.source_version }}, latest
