@@ -6,7 +6,7 @@ RUN apk add --no-cache sudo curl autoconf automake libtool pkgconf build-base \
 
 ARG USRSCTP_VERSION=fd070e05a7474f38c7fecdf4d4b6005d2547ee00
 ARG LIBSRTP_VERSION=v2.7.0
-ARG JANUS_VERSION=v1.3.3
+ARG JANUS_VERSION=v1.4.0
 
 RUN cd /tmp && \
     git clone https://github.com/sctplab/usrsctp && \

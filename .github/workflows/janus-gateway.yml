@@ -5,7 +5,7 @@ env:
   context: janus-gateway
   dockerfile: janus-gateway/Dockerfile
   dest_repo:  ghcr.io/lnobach/janus-gateway
-  dest_tag: 1.3.3
+  dest_tag: 1.4.0
 
 on:
   push:
