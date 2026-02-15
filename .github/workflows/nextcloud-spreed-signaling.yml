@@ -2,7 +2,7 @@ name: nextcloud-spreed-signaling
 
 env:
   source_proj: strukturag/nextcloud-spreed-signaling
-  source_version: 2.0.4
+  source_version: 2.1.0
   dest_repo:  ghcr.io/lnobach/nextcloud-spreed-signaling
 
 on:

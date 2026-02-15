@@ -5,7 +5,7 @@ env:
   context: coturn
   dockerfile: coturn/Dockerfile
   dest_repo:  ghcr.io/lnobach/coturn
-  dest_tag: 4.7.0-r2-alpine
+  dest_tag: 4.8.0-r2-alpine
 
 on:
   push:
